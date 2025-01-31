@@ -4,6 +4,10 @@
 
 ---
 
+## Progress:
+
+2:00/5:00 vid
+
 A lot here I haven't tried, but will be cool to see how it all works.
 
 ### Stack:
