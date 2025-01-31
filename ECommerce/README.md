@@ -8,7 +8,7 @@ A lot here I haven't tried, but will be cool to see how it all works.
 
 ### Stack:
 
-#### Next.js 15 --- running on ----> React 19 Canary
+#### Next.js 15
 
 - with the new Caching tekkers
 - Server components
