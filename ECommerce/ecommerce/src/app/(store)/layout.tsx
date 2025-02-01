@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
+import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +22,9 @@ export default function RootLayout({
             <Header />
             {children}
           </main>
+
+          {/* This is the one that lets the page refresh live with changes in sanity */}
+          <SanityLive />
         </body>
       </html>
     </ClerkProvider>
