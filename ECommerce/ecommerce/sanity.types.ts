@@ -68,9 +68,9 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Sales = {
+export type Sale = {
   _id: string;
-  _type: "sales";
+  _type: "sale";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -278,8 +278,26 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Sales | Order | Product | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Sale | Order | Product | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./src/sanity/lib/sales/getActiveSaleByCouponCode.ts
+// Variable: ACTIVE_SALE_BY_COUPON_QUERY
+// Query: *[  _type == "sale"  && isActive == true  && couponCode == $couponCode  ] | order(validFrom desc)[0]
+export type ACTIVE_SALE_BY_COUPON_QUERYResult = {
+  _id: string;
+  _type: "sale";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  discountAmount?: number;
+  couponCode?: string;
+  ValidFrom?: string;
+  ValidTo?: string;
+  isActive?: boolean;
+} | null;
+
 // Source: ./src/sanity/lib/products/getAllCategories.ts
 // Variable: ALL_CATEGORIES_QUERY
 // Query: *[_type == "category"  ] | order(name asc)
@@ -361,6 +379,7 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
+    "\n  *[\n  _type == \"sale\"\n  && isActive == true\n  && couponCode == $couponCode\n  ] | order(validFrom desc)[0]\n  ": ACTIVE_SALE_BY_COUPON_QUERYResult;
     "\n  *[_type == \"category\"\n  ] | order(name asc)": ALL_CATEGORIES_QUERYResult;
     "\n  *[_type == \"product\"\n  ] | order(name asc)": ALL_PRODUCTS_QUERYResult;
   }
