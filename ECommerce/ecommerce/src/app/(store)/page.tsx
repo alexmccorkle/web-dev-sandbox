@@ -6,7 +6,6 @@ import ValentinesBanner from "@/components/ValentinesBanner";
 export default async function Home() {
   const products = await getAllProducts();
   const categories = await getAllCategories();
-
   return (
     <div>
       <ValentinesBanner />

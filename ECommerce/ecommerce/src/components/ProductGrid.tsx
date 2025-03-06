@@ -1,10 +1,13 @@
 "use client";
 
+import { useUser } from "@clerk/nextjs";
 import { Product } from "../../sanity.types";
 import ProductThumb from "./ProductThumb";
 import { AnimatePresence, motion } from "framer-motion";
 
 function ProductGrid({ products }: { products: Product[] }) {
+  const user = useUser().user;
+  console.log(user);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {products?.map((product) => {
