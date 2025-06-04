@@ -1,18 +1,92 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-import TaskForm from './components/TaskForm.vue';
-const message = ref('Tasks App');
+import { computed, ref } from "vue";
+import TaskForm from "./components/TaskForm.vue";
+import TaskList from "./components/TaskList.vue";
+import type { Task, TaskFilter } from "./types";
+import FilterButton from "./components/FilterButton.vue";
+
+const message = ref("Tasks App");
+const tasks = ref<Task[]>([]);
+const filter = ref<TaskFilter>("all");
+
+const totalDone = computed(() =>
+  tasks.value.reduce((total, task) => (task.done ? total + 1 : total), 0)
+);
+
+const filteredTasks = computed(() => {
+  switch (filter.value) {
+    case "all":
+      return tasks.value;
+    case "completed":
+      return tasks.value.filter((task) => task.done);
+    case "todo":
+      return tasks.value.filter((task) => !task.done);
+  }
+  return tasks.value;
+});
+
+function addTask(newTask: string) {
+  tasks.value.push({
+    id: crypto.randomUUID(),
+    title: newTask,
+    done: false,
+  });
+}
+
+function removeTask(id: string) {
+  const index = tasks.value.findIndex((task) => task.id === id);
+  if (index !== -1) {
+    tasks.value.splice(index, 1);
+  }
+}
+
+function toggleDone(id: string) {
+  const task = tasks.value.find((task) => task.id === id);
+  if (task) {
+    task.done = !task.done;
+  }
+}
+
+function setFilter(value: TaskFilter) {
+  filter.value = value;
+}
 </script>
 
 <template>
   <main>
-    <h1>{{ TaskForm.message }}</h1>
-    <TaskForm />
+    <h1>{{ message }}</h1>
+    <!-- Basically, IF TaskForm emits that event, use function addTask -->
+    <TaskForm @add-task="addTask" />
+    <h3 v-if="!tasks.length">Add a task to get started!</h3>
+    <h3 v-else>{{ totalDone }} / {{ tasks.length }} tasks completed!</h3>
+
+    <div v-if="tasks.length" class="button-container">
+      <FilterButton
+        :currentFilter="filter"
+        filter="all"
+        @set-filter="setFilter"
+      />
+      <FilterButton
+        :currentFilter="filter"
+        filter="completed"
+        @set-filter="setFilter"
+      />
+      <FilterButton
+        :currentFilter="filter"
+        filter="todo"
+        @set-filter="setFilter"
+      />
+    </div>
+    <TaskList
+      :tasks="filteredTasks"
+      @toggle-done="toggleDone"
+      @remove-task="removeTask"
+    />
   </main>
 </template>
 
-<style scoped>
-/* scoped ONLY applies to this component */
+<style>
+/* can add scoped so it ONLY applies to this component */
 main {
   max-width: 800px;
   margin: 1rem auto;
@@ -21,5 +95,6 @@ main {
 .button-container {
   display: flex;
   justify-content: end;
+  gap: 0.5rem;
 }
 </style>

@@ -1,11 +1,20 @@
-<script>
-import { ref } from 'vue';
+<script setup lang="ts">
+import { ref } from "vue";
 
-const newTask = ref('');
+const emit = defineEmits<{
+  addTask: [newTask: string];
+}>();
+
+const newTask = ref("");
+const error = ref("");
 
 function formSubmitted() {
-  console.log(newTask.value);
-  newTask.value = ''; // Clear the input after submission
+  if (newTask.value.trim()) {
+    emit("addTask", newTask.value.trim());
+    newTask.value = ""; // Clear the input after submission
+  } else {
+    error.value = "Task cannot be empty!";
+  }
 }
 </script>
 
@@ -13,7 +22,13 @@ function formSubmitted() {
   <form @submit.prevent="formSubmitted">
     <label>
       New Task
-      <input v-model="newTask" name="newTask" />
+      <input
+        v-model="newTask"
+        name="newTask"
+        :aria-invalid="!!error || undefined"
+        @input="error = ''"
+      />
+      <small v-if="error" id="invalid-helper"> {{ error }} </small>
     </label>
     <div class="button-container">
       <button>Add</button>
