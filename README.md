@@ -13,11 +13,16 @@ Instead of cluttering my GitHub with a dozen separate repos, I'm keeping everyth
   Exploring Sanity, Stripe, and Clerk while building on Next.js + TypeScript skills.
 
 - **Syntax's Vue Crash Course**  
-  Following Syntax's crash-course for Vue.js.
+  Completed Syntax's Vue.js crash course by building a basic Todo app.  
+  Liked the syntax of Vue... next up Nuxt crashcourse!
+
+- **Nuxt Crash Course**
+  TODO 🚧
+
 
 ---
 
 ### 📁 Structure
 
 Each folder is a self-contained learning module or tutorial project.  
-Some are rough sketches, others might end up being more polished — this is just where I'll be experimenting.
+Some are rough sketches, others might end up being more polished... this is just where I'll be experimenting.
