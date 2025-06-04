@@ -12,8 +12,8 @@ Instead of cluttering my GitHub with a dozen separate repos, I'm keeping everyth
   Based on Sonny Sangha's Next.js 15 course.  
   Exploring Sanity, Stripe, and Clerk while building on Next.js + TypeScript skills.
 
-- **Syntax's Nuxt App Build**  
-  Following Syntax's full-stack Nuxt course to get a feel for Vue and Nuxt.
+- **Syntax's Vue Crash Course**  
+  Following Syntax's crash-course for Vue.js.
 
 ---
 
