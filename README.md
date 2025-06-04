@@ -1,10 +1,23 @@
-# extraNextJS Learning
+# Web Dev Sandbox
 
-Going to be doing a few different tutorials here and random learning/messing around. Figure one Repo is better than having a bunch of different ones.
+A collection of tutorials, experiments, and general messing around with modern web development.
 
-### 1. Full Stack E-Commerce Website
+Instead of cluttering my GitHub with a dozen separate repos, I'm keeping everything here.
 
-First Project is from Sonny Sangha's Next.js 15 course
-This one's cool because I'll learn how to use Sanity, Stripe and Clerk + building on Tailwind and TS knowledge
+---
 
-### 2. TBD
+### 🧱 Topics Covered
+
+- **Full Stack E-Commerce Website**  
+  Based on Sonny Sangha's Next.js 15 course.  
+  Exploring Sanity, Stripe, and Clerk while building on Next.js + TypeScript skills.
+
+- **Syntax's Nuxt App Build**  
+  Following Syntax's full-stack Nuxt course to get a feel for Vue and Nuxt.
+
+---
+
+### 📁 Structure
+
+Each folder is a self-contained learning module or tutorial project.  
+Some are rough sketches, others might end up being more polished — this is just where I'll be experimenting.

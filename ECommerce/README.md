@@ -2,36 +2,15 @@
 
 #### Creds: [Sonny Sangha's Tutorial](https://www.youtube.com/watch?v=o-fgWea75O4&ab_channel=SonnySangha)
 
+Partial build of a modern e-commerce store using Next.js 15, Sanity, Clerk, and Stripe.  
+Didn't complete the full tutorial before our Bachelor Project began and distracted me, but explored some cool tools and concepts.
+
 ---
 
-## Progress:
+### 🛠 Stack
 
-2:00/5:00 vid
-
-A lot here I haven't tried, but will be cool to see how it all works.
-
-### Stack:
-
-#### Next.js 15
-
-- with the new Caching tekkers
-- Server components
-- Form components
-
-#### shadcn/Tailwind CSS for the styling
-
-#### Sanity backend
-
-- live 'content lake'
-- typegen for GROQ queries
-  - Pulls data from backend with typesafety
-- Visual editor(?)
-- Search
-
-#### Clerk for Auth
-
-- Gmail auth
-- Next.js 15 support
-- Passkeys!
-
-#### Stripe to mimic Payments
+- **Next.js 15** - App router, server components, new caching, form actions
+- **shadcn/ui + Tailwind CSS** - UI and styling
+- **Sanity** - Headless CMS with type-safe GROQ queries and visual editing
+- **Clerk** - Authentication (Google, Passkeys), Next.js support
+- **Stripe** - Checkout integration for payments
