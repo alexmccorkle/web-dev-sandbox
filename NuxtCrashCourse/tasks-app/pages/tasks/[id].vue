@@ -17,6 +17,13 @@ const {
 			<article>
 				{{ tasks.title }}
 			</article>
+			<div class="button-container">
+				<NuxtLink
+					role="button"
+					:to="{ name: 'tasks-update-id', params: { id: tasks.id } }"
+					>Update</NuxtLink
+				>
+			</div>
 		</div>
 	</div>
 </template>

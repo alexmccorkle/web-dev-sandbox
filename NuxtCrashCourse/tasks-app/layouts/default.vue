@@ -14,6 +14,7 @@
 .button-container {
 	display: flex;
 	justify-content: end;
-	margin-top: 1rem;
+	gap: 1rem;
+	margin: 1rem;
 }
 </style>
