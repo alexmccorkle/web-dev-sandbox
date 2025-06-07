@@ -17,6 +17,9 @@ Instead of cluttering my GitHub with a dozen separate repos, I'm keeping everyth
   Liked the syntax of Vue... next up Nuxt crashcourse!
 
 - **Nuxt Crash Course**
+  Donezo! Thought it was cool, feels like you can move fast with it.
+
+- **Nuxt Fullstack Course**
   TODO 🚧
 
 
