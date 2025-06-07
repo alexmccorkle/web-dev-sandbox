@@ -20,7 +20,7 @@ Instead of cluttering my GitHub with a dozen separate repos, I'm keeping everyth
   Donezo! Thought it was cool, feels like you can move fast with it.
 
 - **Nuxt Fullstack Course**
-  TODO 🚧
+  In Progress 🚧
 
 
 ---
