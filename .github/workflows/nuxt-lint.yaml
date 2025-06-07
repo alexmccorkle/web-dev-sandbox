@@ -1,13 +1,17 @@
-name: Lint
+name: Nuxt Travel Log Lint
 
 on:
   pull_request:
     branches: [main]
+    paths:
+      - "NuxtFullStack/nuxt-travel-log/**"
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./NuxtFullStack/nuxt-travel-log
 
     steps:
       - uses: actions/checkout@v4
