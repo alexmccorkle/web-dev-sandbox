@@ -38,3 +38,6 @@ Locally preview production build:
 # pnpm
 pnpm preview
 ```
+
+
+## We at 1:31:30 in the vid now
